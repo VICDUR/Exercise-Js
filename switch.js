@@ -4,23 +4,27 @@ function piedraPapelTijera (){
     var opciones = ["piedra", "papel", "tijeras"];
     var computador = opciones[Math.floor(Math.random() * 3)];
 
-    switch (true) {
-        case (jugador != "piedra".toLowerCase || jugador != "papel".toLowerCase || jugador != "tijera".toLowerCase):
-            alert("ese elemento no existe, escribe bien");
-            break;   
-        case (jugador === computador):
-            console.log("Empate, computador escogio: " + computador);
-            break;
-        case (jugador === "piedra" && computador === "tijera" || jugador === "tijera" && computador 
-            === "papel" || jugador === "papel" &&  computador === "piedra"):
-            console.log("Ganaste, computador escogio: " + computador);
-            break;
-    
+    if(jugador === "piedra" || jugador === "papel" || jugador === "tijera"){
+
+                switch (true) { 
+                    case (jugador === computador):
+                        console.log("Empate, computador escogio: " + computador);
+                        break;
+                    case (jugador === "piedra" && computador === "tijera" || jugador === "tijera" && computador 
+                        === "papel" || jugador === "papel" &&  computador === "piedra"):
+                        console.log("Ganaste, computador escogio: " + computador);
+                        break;
+                
+                    
+                    default:
+                        alert("Perdiste: computador escogio " + computador);
         
-        default:
-            alert("Perdiste: jugador escogio " + jugador);
+                }
+
+            } else{
+        alert("ese elemento no existe, escribe bien");
         
     }
+}
 
-} 
 console.log(piedraPapelTijera());
